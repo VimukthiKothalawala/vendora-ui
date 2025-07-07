@@ -1,29 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Component Library</title>
-  <link rel="stylesheet" href="./css/main.css" />
-</head>
-<body class="p-3">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Component Library</title>
+    <link rel="stylesheet" href="./css/main.css" />
+  </head>
+  <body class="p-3">
     <button class="btn btn-primary">Primary</button>
-<button class="btn btn-secondary">Secondary</button>
-<button class="btn btn-destructive">Delete</button>
-<button class="btn btn-outline">Outline</button>
+    <button class="btn btn-secondary">Secondary</button>
+    <button class="btn btn-destructive">Delete</button>
+    <button class="btn btn-outline">Outline</button>
 
-<div class="">
-  <button class="btn btn-primary btn-sm">Small</button>
-  <button class="btn btn-primary">Default</button>
-  <button class="btn btn-primary btn-lg">Large</button>
-</div>
-    <button class="btn btn-primary btn-block" onclick="triggerToast()">Block Button</button>
+    <div class="">
+      <button class="btn btn-primary btn-sm">Small</button>
+      <button class="btn btn-primary">Default</button>
+      <button class="btn btn-primary btn-lg">Large</button>
+    </div>
 
-  <button class="btn btn-primary" onclick="showToast('Saved successfully!', 'success')">Success Toast</button>
-  <button class="btn btn-destructive" onclick="showToast('Something went wrong!', 'error')">Error Toast</button>
+    <button class="btn btn-primary" onclick="showToast('Saved!')">
+      Success
+    </button>
+    <button class="btn btn-destructive" onclick="showToast('Failed!', 'error')">
+      Error
+    </button>
+    <button
+      class="btn btn-outline"
+      onclick="showToast('Info message', 'success', 50000)"
+    >
+      Custom 5s
+    </button>
 
-  <!-- Load toast logic -->
-  <script src="./js/components/toast.js"></script>
+    <div class="card" style="max-width: 400px; margin-top: 2rem">
+      <div class="card-header">
+        <!-- <div class="card-title">User Profile</div> -->
+        <div class="card-subtitle">User Profile</div>
+        <div class="card-description">Here is a sample description</div>
+      </div>
+      <div class="card-content">
+        <p>Name: Vimukthi Kothalawala</p>
+        <p>Email: vimukthi@example.com</p>
+      </div>
+      <div class="card-footer">
+        <button class="btn btn-secondary">Cancel</button>
+        <button class="btn btn-primary">Save</button>
+      </div>
+    </div>
 
-</body>
+    <!-- Load toast logic -->
+    <script src="./js/components/toast.js"></script>
+  </body>
 </html>
