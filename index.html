@@ -38,14 +38,14 @@
         <div class="card-description">Here is a sample description</div>
       </div>
       <div class="card-content">
-       <div>
-        <input
-    id="email"
-    type="email"
-    class="input"
-    placeholder="you@example.com"
-  />
-       </div>
+        <div>
+          <input
+            id="email"
+            type="email"
+            class="input"
+            placeholder="you@example.com"
+          />
+        </div>
       </div>
       <div class="card-footer">
         <button class="btn btn-secondary">Cancel</button>
@@ -53,18 +53,132 @@
       </div>
     </div>
 
-    <div style="max-width: 400px; margin-top: 2rem;">
-  <label for="email" style="font-size: 0.875rem; font-weight: 500; display: block; margin-bottom: 0.25rem;">
-    Email address
-  </label>
-  <input
-    id="email"
-    type="email"
-    class="input"
-    placeholder="you@example.com"
-  />
-</div>
+    <div style="max-width: 400px; margin-top: 2rem" class="flex flex-col gap-2">
+      <label
+        for="email"
+        style="
+          font-size: 0.875rem;
+          font-weight: 500;
+          display: block;
+          margin-bottom: 0.25rem;
+        "
+      >
+        Email address
+      </label>
+      <input
+        id="email"
+        type="email"
+        class="input"
+        placeholder="you@example.com"
+      />
+      <input type="text" class="input input-lg" placeholder="Large input" />
+      <input type="text" class="input input-sm" placeholder="Small input" />
+      <input
+        type="email"
+        class="input input-error"
+        placeholder="Invalid email"
+      />
+      <input type="text" class="input" placeholder="Native disabled" disabled />
+      <input
+        type="text"
+        class="input input-disabled"
+        placeholder="Class-based disabled"
+      />
+    </div>
 
+    <div class="table-wrapper" style="margin-top: 2rem">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Status</th>
+            <th>Role</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Vimukthi Kothalawala</td>
+            <td>vimukthi@example.com</td>
+            <td>Active</td>
+            <td>Admin</td>
+          </tr>
+          <tr>
+            <td>Jane Doe</td>
+            <td>jane@domain.com</td>
+            <td>Pending</td>
+            <td>User</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Trigger -->
+    <button class="btn btn-primary" onclick="openModal('demo-modal')">
+      Open Modal
+    </button>
+    <button class="btn btn-primary" onclick="openModal('form-modal')">
+      Open Form
+    </button>
+
+    <!-- Modal -->
+    <div class="modal-overlay" id="demo-modal">
+      <div class="modal">
+        <div class="modal-header">Confirm Action</div>
+        <div class="modal-body">
+          Are you sure you want to perform this action?
+        </div>
+        <div class="modal-footer">
+          <button
+            class="btn btn-secondary btn-sm"
+            onclick="closeModal('demo-modal')"
+          >
+            Cancel
+          </button>
+          <button class="btn btn-primary btn-sm">Confirm</button>
+        </div>
+      </div>
+    </div>
+    <div class="modal-overlay" id="form-modal">
+      <div class="modal">
+        <div class="modal-header">Enter Details</div>
+        <div class="modal-body">
+          <div
+            style="max-width: 400px; margin-top: 2rem"
+            class="flex flex-col gap-2"
+          >
+            <label
+              for="email"
+              style="
+                font-size: 0.875rem;
+                font-weight: 500;
+                display: block;
+                margin-bottom: 0.25rem;
+              "
+            >
+              Email address
+            </label>
+            <input
+              id="email"
+              type="email"
+              class="input"
+              placeholder="you@example.com"
+            />
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button
+            class="btn btn-secondary btn-sm"
+            onclick="closeModal('form-modal')"
+          >
+            Cancel
+          </button>
+          <button class="btn btn-primary btn-sm">Confirm</button>
+        </div>
+      </div>
+    </div>
+    <!-- JS -->
+    <script src="./js/components/modal.js"></script>
 
     <!-- Load toast logic -->
     <script src="./js/components/toast.js"></script>

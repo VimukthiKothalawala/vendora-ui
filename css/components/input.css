@@ -16,11 +16,36 @@
   box-shadow: 0 0 0 2px var(--ring);
 }
 
-.input:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
-}
-
 .input::placeholder {
   color: var(--muted-foreground);
+}
+
+/* === Size Variants === */
+.input-sm {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+  border-radius: calc(var(--radius) - 2px);
+}
+
+.input-lg {
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border-radius: calc(var(--radius) + 2px);
+}
+
+/* === State Variants === */
+.input-error {
+  border-color: var(--destructive);
+  /* box-shadow: 0 0 0 2px var(--destructive); */
+}
+.input-error:focus {
+  border-color: var(--destructive);
+  box-shadow: 0 0 0 2px var(--destructive) !important;
+}
+
+/* Optional class for disabling */
+.input-disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  pointer-events: none;
 }

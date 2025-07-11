@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/main.css" />
+
+</head>
+<body>
+    <div class="table-wrapper">
+  <table class="table" id="user-table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+</div>
+
+<!-- 🔸 Dynamic Modal -->
+<div class="modal-overlay" id="dynamic-modal">
+  <div class="modal" id="modal-content">
+    <!-- Modal content will be injected here -->
+  </div>
+</div>
+<script src="./js/components/modal.js"></script>
+<script>
+  const fakeUsers = [
+    { id: 1, name: "Vimukthi" },
+    { id: 2, name: "Jane Doe" },
+    { id: 3, name: "John Smith" }
+  ];
+
+  const tableBody = document.querySelector("#user-table tbody");
+
+  // Render rows
+  fakeUsers.forEach((user) => {
+    const row = document.createElement("tr");
+    row.innerHTML = `
+      <td>${user.id}</td>
+      <td>${user.name}</td>
+      <td>
+        <button class="btn btn-sm btn-primary" onclick="openEditModal(${user.id})">Edit</button>
+      </td>
+    `;
+    tableBody.appendChild(row);
+  });
+
+  // Handle modal open with dynamic content
+  window.openEditModal = function (userId) {
+    const user = fakeUsers.find((u) => u.id === userId);
+    const modal = document.getElementById("modal-content");
+
+    modal.innerHTML = `
+      <div class="modal-header">Edit User #${user.id}</div>
+      <div class="modal-body">
+        <label style="display:block; margin-bottom: 0.25rem;">Name</label>
+        <input class="input" id="edit-name" value="${user.name}" />
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary btn-sm" onclick="closeModal('dynamic-modal')">Cancel</button>
+        <button class="btn btn-primary btn-sm" onclick="saveUser(${user.id})">Save</button>
+      </div>
+    `;
+
+    openModal("dynamic-modal");
+  };
+
+  // Save handler (mock)
+  window.saveUser = function (id) {
+    const input = document.getElementById("edit-name");
+    const newName = input.value;
+    const user = fakeUsers.find(u => u.id === id);
+    user.name = newName;
+
+    // Update the table
+    tableBody.innerHTML = "";
+    fakeUsers.forEach((user) => {
+      const row = document.createElement("tr");
+      row.innerHTML = `
+        <td>${user.id}</td>
+        <td>${user.name}</td>
+        <td>
+          <button class="btn btn-sm btn-primary" onclick="openEditModal(${user.id})">Edit</button>
+        </td>
+      `;
+      tableBody.appendChild(row);
+    });
+
+    closeModal("dynamic-modal");
+    showToast("User updated", "success");
+  };
+</script>
+
+</body>
+</html>
