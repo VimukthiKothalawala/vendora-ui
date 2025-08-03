@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My App</title>
+  <link rel="stylesheet" href="../../css/main.css" />
+</head>
+<body>
+  <button class="sidebar-toggle-btn" aria-label="Open sidebar">&#9776;</button>
+
+<div class="sidebar-backdrop"></div>
+
+<div class="layout">
+  <nav class="sidebar" aria-label="Main sidebar navigation">
+    <ul class="sidebar-nav">
+      <li>
+        <a href="/overview" class="sidebar-link">Overview</a>
+      </li>
+
+      <li>
+        <a href="/products" class="sidebar-link">
+          Products
+          <button class="collapse-btn" aria-label="Toggle sub-menu">&#9654;</button>
+        </a>
+        <ul class="sub-items">
+          <li><a href="/products/all">All Products</a></li>
+          <li><a href="/products/new">New Products</a></li>
+        </ul>
+
+      <li>
+      
+        <li>
+        <a href="/orders" class="sidebar-link">
+          Orders
+          <button class="collapse-btn" aria-label="Toggle sub-menu">&#9654;</button>
+        </a>
+        <ul class="sub-items">
+          <li><a href="/orders/all">All orders</a></li>
+          <li><a href="/orders/new">New orders</a></li>
+        </ul>
+
+      <li>
+        <a href="/orders" class="sidebar-link">Orders</a>
+      </li>
+    </ul>
+    <div class="sidebar-user-card" title="Logged in user">
+  <div class="sidebar-user-avatar">VK</div>
+  <div class="sidebar-user-info">
+    <div class="sidebar-user-name">Vimukthi</div>
+    <div class="sidebar-user-email">vimukthi@example.com</div>
+  </div>
+</div>
+
+  </nav>
+
+  <main class="content">
+    <h1>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Similique ipsa ut doloremque distinctio. Architecto blanditiis omnis eaque, rem facere dignissimos.</h1>
+    <h1>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Similique ipsa ut doloremque distinctio. Architecto blanditiis omnis eaque, rem facere dignissimos.</h1>
+    <h1>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Similique ipsa ut doloremque distinctio. Architecto blanditiis omnis eaque, rem facere dignissimos.</h1>
+    <h1>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Similique ipsa ut doloremque distinctio. Architecto blanditiis omnis eaque, rem facere dignissimos.</h1>
+    <h1>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Similique ipsa ut doloremque distinctio. Architecto blanditiis omnis eaque, rem facere dignissimos.</h1>
+    <h1>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Similique ipsa ut doloremque distinctio. Architecto blanditiis omnis eaque, rem facere dignissimos.</h1>
+    <h1>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Similique ipsa ut doloremque distinctio. Architecto blanditiis omnis eaque, rem facere dignissimos.</h1>
+    <h1>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Similique ipsa ut doloremque distinctio. Architecto blanditiis omnis eaque, rem facere dignissimos.</h1>
+    <p>This is the main content area next to the sidebar.</p>
+  </main>
+</div>
+
+
+<script src="../js/components/sidebar.js"></script>
+
+</body>
+</html>
