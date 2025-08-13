@@ -1,3 +1,7 @@
 sadsad
+<<<<<<< Updated upstream
 
 pr
+=======
+main commit
+>>>>>>> Stashed changes
